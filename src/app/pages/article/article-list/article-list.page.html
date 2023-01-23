@@ -1,0 +1,36 @@
+<ion-header *ngIf="!userdata"  [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/loginscreen']" routerDirection="root"  color="light"><ion-icon name="people"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-header *ngIf="userdata" [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list *ngFor="let articlelist of article" routerLink="/article/{{articlelist.APC_Post_ID}}">
+
+    <ion-item detail>
+      <ion-label class="note_title"> {{articlelist.APC_Post_Name}}</ion-label>
+
+    </ion-item>
+
+
+</ion-list>
+
+</ion-content>

@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiurl:"https://santgajananbhaktparivar.com/Api/",
+  siteurl:'https://santgajananbhaktparivar.com/'
 };

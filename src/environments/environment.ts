@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // apiurl:"http://localhost/girish/mitesh/saloon/ci-php-webapi/Api/"
+  apiurl:"https://santgajananbhaktparivar.com/Api/",
+  siteurl:'https://santgajananbhaktparivar.com/'
 };
 
 /*

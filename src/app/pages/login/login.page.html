@@ -1,0 +1,83 @@
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+   <ion-button fill="clear" slot="start" color="light">
+     <!-- <ion-icon slot="icon-only" name="menu"></ion-icon> -->
+     <ion-menu-button></ion-menu-button>
+   </ion-button>
+   <ion-buttons slot="end">
+
+
+    <!-- <ion-button [routerLink]="['/profile']" routerDirection="root"><ion-icon name="person-outline"></ion-icon></ion-button> -->
+
+
+      <ion-button [routerLink]="['/loginscreen']" *ngIf="showlogin" routerDirection="root"  color="light"><ion-icon name="people"></ion-icon></ion-button>
+
+  </ion-buttons>
+  </ion-item>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="main-header">
+
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <ion-label color="light">
+          <h6> निस्वार्थ, निरपेक्ष, निःशुल्क, निरंतर, नियमित उपासना</h6>
+        </ion-label>
+        <ion-label>
+          <h5>स्थापना - २१-जानेवारी-२००८</h5>
+        </ion-label>
+        <ion-label color="light">
+          <ion-img src="../../assets/images/header.png" class="logo"></ion-img>
+          संत गजानन भक्त परिवार</ion-label>
+          <h6>
+          संस्थापक - गमभ शशिकांत पोकळे दादा
+          </h6>
+      </ion-col>
+
+    </ion-row>
+
+
+    <!-- <ion-row class="ion-margin-horizontal">
+      <ion-col *ngFor="let item of features" size="12">
+        <ion-card class="ion-text-center">
+
+          <ion-card-content routerLink="/{{item.page}}">
+            <ion-label color="medium">{{ item?.name }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-list>
+
+      <ion-item lines="none" *ngFor="let item of transactions" routerLink="/{{item.page}}">
+        <!-- <ion-icon slot="start" name="book" color="medium"></ion-icon> -->
+        <ion-label size="large" class="ion-text-wrap" color="medium">
+          <b>{{item.vendor}}</b>
+
+        </ion-label>
+
+      </ion-item>
+    </ion-list>
+    <span *ngIf ="brodcastmsg !==''">
+      <ion-card  *ngFor="let msg of brodcastmsg" >
+
+        <ion-card-content class="ion-text-justify ion-text-wrap">
+          <span class="scrollmsg" [innerHTML]="msg.bulletin_quote"></span>
+          <span class="scrollmsg" [innerHTML]="msg.scrolling_message"></span>
+          <ion-img src="{{siteurl}}uploads/bulletin_img/{{msg.bulletin_img}}" class="logo"></ion-img>
+         <ion-item lines="none" >
+            <ion-button fill="outline" routerLink="/readmore/{{msg.bulletin_id}}" slot="end">Read More .... </ion-button>
+          </ion-item>
+        </ion-card-content>
+
+      </ion-card>
+  </span>
+  </ion-grid>
+
+</ion-content>

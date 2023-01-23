@@ -1,0 +1,88 @@
+<ion-header [translucent]="true"  color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Upsana Registration</ion-text> <br/>
+    <ion-buttons slot="end">
+      <!-- <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button> -->
+      <ion-button [routerLink]="['/login']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+    <ion-card class="ion-no-margin">
+
+
+      <ion-card-content>
+      <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.value)">
+        <div class="wrapform">
+          <ion-item>
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input type="text" name="text" formControlName="username" placeholder="Full Name" required></ion-input>
+          </ion-item>
+          <div>
+              <ng-container *ngFor="let validation of validationUserMessage.username">
+                <div class="error_message" *ngIf="validationFormUser.get('username').hasError(validation.type) && (validationFormUser.get('username').dirty || validationFormUser.get('username').touched)">
+                  {{validation.message}}
+                </div>
+              </ng-container>
+          </div>
+          <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-input type="number" name="phone" formControlName="phone" placeholder="Mobile No (Without country prefix)"  required></ion-input>
+          </ion-item>
+          <div>
+            <ng-container *ngFor="let validation of validationUserMessage.phone">
+              <div class="error_message" *ngIf="validationFormUser.get('phone').hasError(validation.type) && (validationFormUser.get('phone').dirty || validationFormUser.get('phone').touched)">
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+        <ion-item>
+          <ion-icon name="business-outline"></ion-icon>
+          <ion-input type="text" name="city" formControlName="city" placeholder="City"  required></ion-input>
+        </ion-item>
+        <div>
+          <ng-container *ngFor="let validation of validationUserMessage.city">
+            <div class="error_message" *ngIf="validationFormUser.get('city').hasError(validation.type) && (validationFormUser.get('city').dirty || validationFormUser.get('city').touched)">
+              {{validation.message}}
+            </div>
+          </ng-container>
+      </div>
+      <ion-item>
+        <ion-icon name="business-outline"></ion-icon>
+        <ion-input type="text" name="dist" formControlName="dist" placeholder="District"  required></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let validation of validationUserMessage.dist">
+          <div class="error_message" *ngIf="validationFormUser.get('dist').hasError(validation.type) && (validationFormUser.get('dist').dirty || validationFormUser.get('dist').touched)">
+            {{validation.message}}
+          </div>
+        </ng-container>
+    </div>
+
+
+        </div>
+
+        <div class="sign-btn-wrap">
+            <ion-button type="submit" shape="round" fill="solid" color="dark" class="sign-btn" [disabled]="!validationFormUser.valid">Submit</ion-button>
+            <ion-button type="reset" shape="round" fill="solid" color="dark" class="sign-btn">Reset</ion-button>
+          </div>
+
+      </form>
+      </ion-card-content>
+
+    </ion-card>
+
+
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true"  color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Broadcast Message</ion-text> <br/>
+    <ion-buttons slot="end">
+      <!-- <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button> -->
+      <ion-button [routerLink]="['/login']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content color="light">
+  <ion-card class="ion-text-center" *ngFor="let articlelist of article">
+
+    <ion-card-content >
+      <ion-text [innerHTML]="articlelist.bulletin_quote"></ion-text>
+      <ion-text [innerHTML]="articlelist.scrolling_message"></ion-text>
+
+
+    </ion-card-content>
+
+
+</ion-card>
+<ion-card *ngFor="let articlelist of article" class="ion-text-justify ion-text-wrap">
+  <ion-img src="{{siteurl}}uploads/bulletin_img/{{articlelist.bulletin_img}}" class="logo"></ion-img>
+  <ion-card-content >
+    <span [innerHTML]="articlelist.bulletin_message"></span>
+  </ion-card-content>
+
+
+</ion-card>
+</ion-content>

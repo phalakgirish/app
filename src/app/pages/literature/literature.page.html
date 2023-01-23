@@ -1,0 +1,38 @@
+<ion-header *ngIf="!userdata"  [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+     <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/loginscreen']" routerDirection="root"  color="light"><ion-icon name="people"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-header *ngIf="userdata" [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+     <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-grid>
+  <ion-row class="ion-margin-horizontal">
+    <ion-col *ngFor="let item of features" size="12">
+      <ion-card class="ion-text-center">
+
+        <ion-card-content routerLink="/{{item.page}}">
+          <ion-label color="medium">{{ item?.name }}</ion-label>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>

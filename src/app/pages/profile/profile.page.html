@@ -1,0 +1,133 @@
+<ion-header [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">  
+      <ion-menu-button></ion-menu-button>   
+    </ion-buttons>  
+   
+    <ion-text>Profile</ion-text> <br/>
+   <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content [fullscreen]='true' color="light">
+   <ion-card class="no-padding">
+      <ion-list routerLink="/readstatus">
+        <ion-item-divider>
+          <ion-label class="note_title">
+            Name
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee Name
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           Mobile
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee No.
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           Email
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee Email
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           City
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee City
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           Dist
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee Dist
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           State
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee State
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           Group
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee Group
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+      <ion-list>
+        <ion-item-divider>
+          <ion-label class="note_title">
+           User Name
+          </ion-label>
+          <ion-col>
+            <div class="ion-text-end note_date">
+              <ion-label color="danger">
+              Devotee User name
+              </ion-label>
+            </div>
+          </ion-col>
+        </ion-item-divider>
+      </ion-list>
+  </ion-card>  
+  </ion-content>
+  

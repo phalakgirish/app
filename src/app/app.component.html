@@ -1,3 +1,85 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+     <ion-menu side="start" menuId="first" contentId="content">
+       <ion-content color="medium">
+
+         <ion-list *ngIf="showMenu">
+          <ion-menu-toggle auto-hide="true" >
+            <ion-item [routerLink]="['/homepage']" routerDirection="root" lines="full"  color="medium">
+              <ion-icon name="home" slot="start"></ion-icon> Home
+            </ion-item>
+           </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" *ngIf="role !=5">
+           <ion-item [routerLink]="['/mygroup']" routerDirection="root" lines="full" color="medium">
+            <ion-icon name="people" slot="start"></ion-icon>My Group
+           </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" *ngIf="role !=5">
+            <ion-item [routerLink]="['/mygroup-devotee']" routerDirection="root" lines="full" color="medium">
+             <ion-icon name="person" slot="start"></ion-icon>My Group Devotee
+            </ion-item>
+           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false" *ngIf="role !=5">
+           <ion-item [routerLink]="['/mydevotee-list']" routerDirection="root" lines="full" color="medium">
+            <ion-icon name="person" slot="start"></ion-icon>My Devotee
+           </ion-item>
+          </ion-menu-toggle>
+
+
+          <ion-menu-toggle auto-hide="true" >
+            <ion-item [routerLink]="['/aboutus']" routerDirection="root" lines="full"  color="medium">
+              <ion-icon name="earth" slot="start"></ion-icon>About Us
+            </ion-item>
+           </ion-menu-toggle>
+           <ion-menu-toggle auto-hide="true" >
+            <ion-item [routerLink]="['/article-list']" routerDirection="root" lines="full"  color="medium">
+              <ion-icon name="book" slot="start"></ion-icon> Articles
+            </ion-item>
+           </ion-menu-toggle>
+           <ion-menu-toggle auto-hide="true" >
+            <ion-item [routerLink]="['/literature']" routerDirection="root" lines="full"  color="medium">
+              <ion-icon name="document" slot="start"></ion-icon> Literature
+            </ion-item>
+           </ion-menu-toggle>
+           <ion-menu-toggle auto-hide="true" >
+            <ion-item [routerLink]="['/upasana-list']" routerDirection="root" lines="full"  color="medium">
+              <ion-icon name="business" slot="start"></ion-icon> Upcoming Upasana
+            </ion-item>
+           </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+           <ion-item [routerLink]="['#']" routerDirection="root" lines="full" color="medium" (click)="logout()">
+             <ion-icon name="power-sharp" slot="start"></ion-icon>&nbsp;Logout
+           </ion-item>
+          </ion-menu-toggle>
+       </ion-list>
+       <ion-list *ngIf="!showMenu">
+        <ion-menu-toggle auto-hide="true" >
+          <ion-item [routerLink]="['/']" routerDirection="root" lines="full"  color="medium">
+            <ion-icon name="home" slot="start"></ion-icon> Home
+          </ion-item>
+         </ion-menu-toggle>
+         <ion-menu-toggle auto-hide="true" >
+          <ion-item [routerLink]="['/aboutus']" routerDirection="root" lines="full"  color="medium">
+            <ion-icon name="people" slot="start"></ion-icon> About Us
+          </ion-item>
+         </ion-menu-toggle>
+         <ion-menu-toggle auto-hide="true" >
+          <ion-item [routerLink]="['/article-list']" routerDirection="root" lines="full"  color="medium">
+            <ion-icon name="book" slot="start"></ion-icon> Articles
+          </ion-item>
+         </ion-menu-toggle>
+         <ion-menu-toggle auto-hide="true" >
+          <ion-item [routerLink]="['/literature']" routerDirection="root" lines="full"  color="medium">
+            <ion-icon name="document" slot="start"></ion-icon> Literature
+          </ion-item>
+         </ion-menu-toggle>
+         <ion-menu-toggle auto-hide="true" >
+          <ion-item [routerLink]="['/upasana-list']" routerDirection="root" lines="full"  color="medium">
+            <ion-icon name="business" slot="start"></ion-icon> Upcoming Upasana
+          </ion-item>
+         </ion-menu-toggle>
+       </ion-list>
+       </ion-content>
+     </ion-menu>
+     <ion-router-outlet Id="content"></ion-router-outlet>
 </ion-app>

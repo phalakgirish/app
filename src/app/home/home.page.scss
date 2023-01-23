@@ -25,3 +25,29 @@
 #container a {
   text-decoration: none;
 }
+
+ion-content.background {
+  //--ion-background-color:#2656aa;
+}
+
+.box {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.box .img {
+  max-width: 180px !important;
+  width: 100%;
+  // margin-bottom: 50px;
+}
+
+.box h3 {
+  color: rgb(10, 2, 2);
+  text-transform: uppercase;
+  font-weight: bold;
+}

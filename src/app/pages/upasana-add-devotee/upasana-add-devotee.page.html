@@ -1,0 +1,136 @@
+<ion-header [translucent]="true"  color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Devotee List</ion-text> <br/>
+    <ion-buttons slot="end">
+
+      <!-- <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button> -->
+      <ion-button [routerLink]="['/login']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+<ion-content [fullscreen]='true' color="light">
+
+  <ion-card-content>
+    <ion-col>
+      <div class="ion-text-center">
+        <h3>Registerd Number</h3>
+        <ion-text>{{phonenumber}}</ion-text>
+      </div>
+
+    </ion-col>
+  </ion-card-content>
+  <ion-card class="ion-no-margin">
+
+
+    <ion-card-content class="ion-padding">
+      <p>New Devotee Registration</p>
+    <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.value)">
+      <div class="wrapform">
+        <ion-item>
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-input type="text" name="text" formControlName="username" placeholder="Full Name" required></ion-input>
+        </ion-item>
+        <div>
+            <ng-container *ngFor="let validation of validationUserMessage.username">
+              <div class="error_message" *ngIf="validationFormUser.get('username').hasError(validation.type) && (validationFormUser.get('username').dirty || validationFormUser.get('username').touched)">
+                {{validation.message}}
+              </div>
+            </ng-container>
+        </div>
+
+      <ion-item>
+        <ion-icon name="business-outline"></ion-icon>
+        <ion-input type="text" name="city" formControlName="city" placeholder="City"  required></ion-input>
+      </ion-item>
+      <div>
+        <ng-container *ngFor="let validation of validationUserMessage.city">
+          <div class="error_message" *ngIf="validationFormUser.get('city').hasError(validation.type) && (validationFormUser.get('city').dirty || validationFormUser.get('city').touched)">
+            {{validation.message}}
+          </div>
+        </ng-container>
+    </div>
+    <ion-item>
+      <ion-icon name="business-outline"></ion-icon>
+      <ion-input type="text" name="dist" formControlName="dist" placeholder="District"  required></ion-input>
+    </ion-item>
+    <div>
+      <ng-container *ngFor="let validation of validationUserMessage.dist">
+        <div class="error_message" *ngIf="validationFormUser.get('dist').hasError(validation.type) && (validationFormUser.get('dist').dirty || validationFormUser.get('dist').touched)">
+          {{validation.message}}
+        </div>
+      </ng-container>
+  </div>
+
+
+      </div>
+
+      <div class="sign-btn-wrap">
+          <ion-button type="submit" shape="round" fill="solid" color="dark" class="sign-btn" [disabled]="!validationFormUser.valid">Submit</ion-button>
+          <ion-button type="reset" shape="round" fill="solid" color="dark" class="sign-btn">Reset</ion-button>
+        </div>
+
+    </form>
+  </ion-card-content>
+  <ion-list *ngFor="let ans of users">
+    <ion-item-divider>
+      <ion-label class="note_title">
+      {{ans.reg_name}}
+      </ion-label>
+      <ion-col>
+        <div class="ion-text-end note_date">
+          <span>
+            <ion-button (click)="add_devotee(ans.reg_id)" class="add_devotee"><ion-icon name="add"></ion-icon></ion-button>
+
+          </span>
+
+        </div>
+      </ion-col>
+
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-label class="note_title">
+      Mobile
+      </ion-label>
+      <ion-col>
+        <div class="ion-text-end note_date">
+          <span>
+            <ion-label  color="success">
+              {{ans.reg_phone_number}}
+              </ion-label>
+          </span>
+
+        </div>
+      </ion-col>
+
+    </ion-item-divider>
+    <ion-item-divider>
+      <ion-label class="note_title">
+      City
+      </ion-label>
+      <ion-col>
+        <div class="ion-text-end note_date">
+          <span>
+            <ion-label  color="success">
+              {{ans.reg_city}}
+              </ion-label>
+          </span>
+
+        </div>
+      </ion-col>
+
+    </ion-item-divider>
+    <!-- <div class="ion-text-justify note_content">
+      <span>
+
+        <ion-button size="small" expand="full" shape="round" color="danger">Mark As Read</ion-button>
+      </span>
+      <span >
+        <ion-button size="small" expand="full" shape="round"  color="success ">Mark As Unread</ion-button>
+      </span>
+    </div> -->
+  </ion-list>
+
+

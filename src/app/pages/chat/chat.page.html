@@ -1,0 +1,69 @@
+<ion-header [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-text>{{groupName}}</ion-text> <br/>
+   <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content #content>
+  <ion-grid>
+    <ion-row >
+      <!-- <ion-col size="9" class="message" [offset]="0" [ngClass]="'other-message'" oid ="1">
+        <b>Other Person</b><div class="time ion-text-right">
+          07/03/2022 3:40pm
+        </div><br>
+        <span><span >Others Message</span>
+
+        </span>
+      </ion-col> -->
+
+      <!-- <ion-col size="9" class="message" [offset]="3" [ngClass]="'my-message'" uid="2">
+
+        <b>You</b> <div class="time ion-text-right">
+          07/03/2022 3:40pm
+        </div><br>
+        <span>
+          <span>My Message</span>
+
+
+        </span>
+
+
+
+
+      </ion-col> -->
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="light">
+
+    <ion-row class="ion-align-items-center">
+      <ion-col size="8">
+
+
+        <ion-textarea autoGrow='true'  class="message-input"  rows="1" maxLength="500" [(ngModel)]="textMsg" placeholder="Type..." id="message"></ion-textarea>
+
+
+      </ion-col>
+
+      <ion-col size='2'>
+        <!-- Send Message Button -->
+      <ion-button color="primary" [disabled]="textMsg==''" class="msg-btn" fill="clear"  (click)="send()">
+        <ion-icon slot="icon-only" zoom='2' name="send-outline"></ion-icon>
+      </ion-button>
+      </ion-col>
+    <!-- <ion-item>
+
+    </ion-item> -->
+  </ion-row>
+</ion-toolbar>
+</ion-footer>

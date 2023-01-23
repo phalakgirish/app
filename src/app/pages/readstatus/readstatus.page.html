@@ -1,0 +1,62 @@
+<ion-header [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+    <!-- <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>   -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Adhyay Status</ion-text> <br/>
+   <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+</ion-header>
+<ion-content [fullscreen]='true' color="light">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" >
+    <ion-fab-button color="medium" routerLink="/chat/{{groupId}}">
+      <ion-icon name="chatbubbles"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card-content>
+    <ion-col>
+      <div class="ion-text-center">
+        <h3>{{groupName}}</h3>
+      </div>
+
+    </ion-col>
+  </ion-card-content>
+  <ion-list *ngFor="let Aadhya of AadhyaList">
+    <ion-item-divider>
+      <ion-label class="note_title">
+       {{Aadhya.MUM_first_name}} {{Aadhya.MUM_last_name}}
+      </ion-label>
+      <ion-col>
+        <div class="ion-text-end note_date">
+          <span *ngIf="Aadhya.track==1">
+            <ion-label  color="success">
+              Aadhya No.  {{Aadhya.adhyay_number}}
+              </ion-label>
+          </span>
+          <span *ngIf="Aadhya.track==0">
+            <ion-label  color="danger">
+              Aadhya No.  {{Aadhya.adhyay_number}}
+              </ion-label>
+          </span>
+        </div>
+      </ion-col>
+    </ion-item-divider>
+    <div class="ion-text-justify note_content">
+      <span *ngIf="Aadhya.track==0">
+        <ion-button size="small" expand="full" shape="round" (click)="markAsRead(Aadhya.adhyay_id)" color="danger">Mark As Read</ion-button>
+      </span>
+      <span *ngIf="Aadhya.track==1">
+        <ion-button size="small" expand="full" shape="round"  (click)="markAsUnRead(Aadhya.adhyay_id)" color="success ">Mark As Unread</ion-button>
+      </span>
+    </div>
+  </ion-list>
+
+</ion-content>

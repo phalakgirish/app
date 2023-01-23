@@ -1,0 +1,83 @@
+ion-content {
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       background-color: #d18b6861;
+  
+   }
+
+   .chat{
+    display: flex;
+    flex-direction: column;
+    
+    .me{
+        position: relative;
+        margin:20px 5px 0px;
+        max-width: 80%;
+        align-self: flex-end;
+        padding: 6px 10px 7px;
+        border-radius: 15px 15px 0;
+        background-color: #3296fa;
+        font-size: medium;
+        line-height: 1.4;
+        color:#fff;
+    }
+    .you{
+        position: relative;
+        margin:15px;
+        max-width: 80%;
+        align-self: flex-start;
+        padding: 6px 10px 7px;
+        border-radius: 15px 15px 15px 0;
+        background-color: #dadada;
+        font-size: medium;
+        line-height: 1.4;
+  
+    }
+    .name{
+        font-size: small;
+        font-weight: bold;
+    }
+  }
+  ion-card{
+    background-color: #f7f7f7;
+    padding: 0px;
+    /* border: 1px solid; */
+    border-radius: 10px;
+  }
+  .message-input {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 6px;
+    background: #fff;
+    resize: none;
+    margin-top: 0px;
+    --padding-start: 8px;
+  }
+  
+  .message {
+    padding: 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+    white-space: pre-wrap;
+  }
+  
+  .my-message {
+    background:#dd5619;
+    color: #fff;
+    font-size: 12px;
+  }
+  
+  .other-message {
+    // background: #fa6400d1;
+    background: #3211029e;
+    color: #fff;
+    font-size:12px
+  }
+  
+  .time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+  }

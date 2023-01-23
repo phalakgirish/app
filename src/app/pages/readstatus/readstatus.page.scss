@@ -1,0 +1,32 @@
+ion-content {
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     background-color: #d18b6861;
+
+ }
+ ion-card{
+     border:0px !important;
+ }
+ 
+ion-list {
+    // background: #efefef;
+    border-radius: 10px;
+    margin-bottom: 1px;
+    padding: 0px 0px;
+    color: #212121;
+    margin: 3px;
+    .note_title{
+      font-size: 12px;
+      color:#000;
+    }
+     .note_date{
+      font-size: 12px;
+      color:#000;
+    }
+  }
+  
+  [transparent] {
+    --background:transparent;
+  }

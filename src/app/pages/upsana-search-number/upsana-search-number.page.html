@@ -1,0 +1,62 @@
+<ion-header [translucent]="true"  color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Upasana Registration</ion-text> <br/>
+    <ion-buttons slot="end">
+      <!-- <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button> -->
+      <ion-button [routerLink]="['/login']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+    <ion-card class="ion-no-margin">
+
+
+      <ion-card-content>
+      <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.value)">
+        <div class="wrapform">
+
+          <ion-item>
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-input type="number" name="reg_phone_number" formControlName="reg_phone_number" placeholder="Mobile No (Without country prefix)"  required></ion-input>
+          </ion-item>
+          <div>
+            <ng-container *ngFor="let validation of validationUserMessage.reg_phone_number">
+              <div class="error_message" *ngIf="validationFormUser.get('reg_phone_number').hasError(validation.type) && (validationFormUser.get('reg_phone_number').dirty || validationFormUser.get('reg_phone_number').touched)">
+                {{validation.message}}
+              </div>
+            </ng-container>
+          </div>
+
+
+
+
+
+        </div>
+
+        <div class="sign-btn-wrap">
+            <ion-button type="submit" shape="round" fill="solid" color="dark" class="sign-btn" [disabled]="!validationFormUser.valid">Search</ion-button>
+            <ion-button type="reset" shape="round" fill="solid" color="dark" class="sign-btn">Reset</ion-button>
+          </div>
+
+      </form>
+      <div class="password_forgot">
+        <ion-button fill="clear" class="ion-no-padding" routerLink="/upsana-registration" >Do you want to register for upasana?</ion-button>
+    </div>
+      </ion-card-content>
+
+    </ion-card>
+
+
+
+
+
+
+
+
+</ion-content>

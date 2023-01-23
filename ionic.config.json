@@ -1,5 +1,7 @@
 {
   "name": "salon",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

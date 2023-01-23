@@ -1,0 +1,50 @@
+<ion-header *ngIf="!userdata"  [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+     <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/loginscreen']" routerDirection="root"  color="light"><ion-icon name="people"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-header *ngIf="userdata" [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+     <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list>
+
+  <ion-row>
+    <ion-col size="6" *ngFor="let img of gallery">
+
+      <ion-label class="note_title">
+        {{img.SG_Name}}
+      </ion-label>
+      <ion-slides zoom [options]="sliderOpts">
+        <ion-slide >
+          <div class="swiper-zoom-container">
+            <img src="https://santgajananbhaktparivar.com/uploads/gallery-images/{{img.SG_Image}}" id="image">
+          </div>
+        </ion-slide>
+
+      </ion-slides>
+
+    </ion-col>
+
+  </ion-row>
+
+  </ion-list>
+
+
+</ion-content>

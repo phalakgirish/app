@@ -1,0 +1,44 @@
+<ion-header *ngIf="!userdata"  [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/loginscreen']" routerDirection="root"  color="light"><ion-icon name="people"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-header *ngIf="userdata" [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>{{pagetitle}}</ion-text> <br/>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card class="ion-text-center" *ngFor="let articlelist of article">
+
+    <ion-card-content >
+      <ion-text><b>{{articlelist.APC_Post_Name}}</b></ion-text>
+
+
+    </ion-card-content>
+
+
+</ion-card>
+<ion-card *ngFor="let articlelist of article" class="ion-text-justify ion-text-wrap">
+
+  <ion-card-content >
+    <span [innerHTML]="articlelist.APC_Post_content"></span>
+  </ion-card-content>
+
+
+</ion-card>
+</ion-content>

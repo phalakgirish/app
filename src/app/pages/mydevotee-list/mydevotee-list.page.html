@@ -1,0 +1,49 @@
+<ion-header [translucent]="true" color="medium">
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> -->
+    <ion-text>My Devotee</ion-text> <br/>
+   <ion-buttons slot="end">
+      <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button>
+      <ion-button [routerLink]="['/homepage']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+
+</ion-header>
+
+<ion-content color="light">
+  <ion-list *ngFor="let devotee of DevoteeList">
+    <ion-item-divider>
+      <ion-label class="note_title">
+        {{devotee.MUM_first_name}} {{devotee.MUM_last_name}}
+      </ion-label>
+      <ion-col>
+        <div class="ion-text-end note_date">
+          <ion-label>
+            {{devotee.MUM_Phone}}
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-item-divider>
+    <div class="ion-text-justify note_content">
+      <ion-row>
+        <ion-label>Gender :{{devotee.MUM_Gender}}</ion-label>
+       </ion-row>
+      <ion-row>
+        <ion-label>Email : {{devotee.MUM_Email}}</ion-label>
+       </ion-row>
+       <ion-row>
+        <ion-label>City : {{devotee.MUM_City}}</ion-label>
+       </ion-row>
+
+
+    </div>
+  </ion-list>
+
+
+</ion-content>

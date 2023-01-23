@@ -1,0 +1,34 @@
+<ion-header [translucent]="true"  color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Upcoming Upasana</ion-text> <br/>
+    <ion-buttons slot="end">
+      <!-- <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button> -->
+      <ion-button [routerLink]="['/login']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content color="light">
+  <ion-card class="ion-text-center" *ngFor="let articlelist of upsana">
+
+    <ion-card-content >
+      <ion-text><b>{{articlelist.upasana_name}}</b></ion-text>
+      <p><b>{{articlelist.start_date | date:'d-MMM-y'}} to {{articlelist.end_date | date:'d-MMM-y'}}</b></p>
+
+    </ion-card-content>
+</ion-card>
+<ion-card *ngFor="let articlelist of upsana" class="ion-text-justify ion-text-wrap">
+  <ion-card-content >
+    <ion-img src="{{siteurl}}uploads/upasana-registration-banner/{{articlelist.upasana_banner}}" class="logo"></ion-img>
+    <span [innerHTML]="articlelist.upasana_text"></span>
+  </ion-card-content>
+  <ion-item lines="none">
+    <ion-button fill="outline" slot="end" href="{{siteurl}}uploads/upasana-registrations-doc/{{articlelist.upasana_document}}">उपासना सांगता - आरती आणि स्तोत्रे</ion-button>
+  </ion-item>
+  <ion-button routerLink="/upsana-search-number/{{articlelist.upasana_id}}" fill="solid" expand="block" color="dark">
+          REGISTRATION FOR UPASANA
+  </ion-button>
+</ion-card>
+</ion-content>

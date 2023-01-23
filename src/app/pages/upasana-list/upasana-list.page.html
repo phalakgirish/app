@@ -1,0 +1,34 @@
+<ion-header [translucent]="true"  color="medium">
+  <ion-toolbar color="medium">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-text>Upcoming Upasana</ion-text> <br/>
+    <ion-buttons slot="end">
+      <!-- <ion-button [routerLink]="['/notification']"><ion-icon name="notifications-outline"></ion-icon></ion-button> -->
+      <ion-button [routerLink]="['/login']" routerDirection="root"><ion-icon name="home-outline"></ion-icon></ion-button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card >
+
+
+    <ion-card-content >
+
+      <ion-list *ngFor="let upsana of upsana" routerLink="/upsana-upcomming/{{upsana.upasana_id}}">
+
+        <ion-item detail>
+          <ion-label class="note_title"> {{upsana.upasana_name}}</ion-label>
+
+        </ion-item>
+
+
+    </ion-list>
+
+    </ion-card-content>
+
+
+</ion-card>
+</ion-content>
